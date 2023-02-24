@@ -23,12 +23,7 @@ module Text.Pandoc.Highlighting ( highlightingStyles
                                 -- ** HTML
                                 , formatHtmlInline
                                 , formatHtmlBlock
-                                , formatHtml4Block
                                 , styleToCss
-                                -- ** ConTeXt
-                                , formatConTeXtInline
-                                , formatConTeXtBlock
-                                , styleToConTeXt
                                 -- * Styles
                                 , pygments
                                 , espresso

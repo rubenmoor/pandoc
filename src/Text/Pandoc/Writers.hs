@@ -26,7 +26,6 @@ module Text.Pandoc.Writers
     , writeBibLaTeX
     , writeChunkedHTML
     , writeCommonMark
-    , writeConTeXt
     , writeCslJson
     , writeDZSlides
     , writeDocBook4
@@ -91,7 +90,6 @@ import Text.Pandoc.Writers.AsciiDoc
 import Text.Pandoc.Writers.BibTeX
 import Text.Pandoc.Writers.ChunkedHTML
 import Text.Pandoc.Writers.CommonMark
-import Text.Pandoc.Writers.ConTeXt
 import Text.Pandoc.Writers.CslJson
 import Text.Pandoc.Writers.DocBook
 import Text.Pandoc.Writers.Docx
@@ -161,7 +159,6 @@ writers = [
   ,("opendocument" , TextWriter writeOpenDocument)
   ,("latex"        , TextWriter writeLaTeX)
   ,("beamer"       , TextWriter writeBeamer)
-  ,("context"      , TextWriter writeConTeXt)
   ,("texinfo"      , TextWriter writeTexinfo)
   ,("man"          , TextWriter writeMan)
   ,("ms"           , TextWriter writeMs)

@@ -50,7 +50,7 @@ import Text.Blaze.Internal (MarkupM (Empty), customLeaf, customParent)
 import Text.DocTemplates (FromContext (lookupContext), Context (..))
 import Text.Blaze.Html hiding (contents)
 import Text.Pandoc.Definition
-import Text.Pandoc.Highlighting (formatHtmlBlock, formatHtml4Block,
+import Text.Pandoc.Highlighting (formatHtmlBlock,
                  formatHtmlInline, highlight, styleToCss)
 import Text.Pandoc.ImageSize
 import Text.Pandoc.Options
@@ -924,8 +924,9 @@ blockToHtmlInner opts (CodeBlock (id',classes,keyvals) rawCode) = do
                     else rawCode
       hlCode   = if isJust (writerHighlightStyle opts)
                     then highlight (writerSyntaxMap opts)
-                         (if html5 then formatHtmlBlock else formatHtml4Block)
-                            (id'',classes',keyvals) adjCode
+                                   formatHtmlBlock
+                                   (id'',classes',keyvals)
+                                   adjCode
                     else Left ""
   case hlCode of
          Left msg -> do
